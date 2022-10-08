@@ -1,19 +1,42 @@
 from l4s import *
 
-n = int(input('Введите количество сотрудников'))
+while True:
+    try:
+        n = int(input('Введите количество сотрудников'))
+        break
+
+    except ValueError:
+        print('ВВОДИТЕ ЧИСЛО!!!!!')
+
+
 person = {}
 taxi = {}
 sort = {}
 person_n = []
 summa = int()
 
+flag = 0
 for i in range(n):
-    x = int(input(f'сколько км ехать до дома {i+1} сотруднику: '))
-    person[i+1] = x
+    while flag < n:
+        try:
+            x = int(input(f'сколько км ехать до дома {i + 1} сотруднику: '))
+            person[i + 1] = x
+            flag += 1
+            break
+        except ValueError:
+            print('ВВОДИТЕ ЧИСЛО!!!!!')
 
+flag1 = 0
 for i in range(n):
-    y = int(input(f'цена такси {i+1}: '))
-    taxi[i+1] = y
+    while flag1 < n:
+        try:
+            y = int(input(f'цена такси {i + 1}: '))
+            taxi[i + 1] = y
+            flag1 += 1
+            break
+        except ValueError:
+            print('ВВОДИТЕ ЧИСЛО!!!!!')
+
 
 taxi1 = sorted(taxi.values(), reverse=True)
 person1 = sorted(person.values())
