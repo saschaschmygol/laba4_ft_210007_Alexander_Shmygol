@@ -9,13 +9,13 @@ while True:
         print('ВВОДИТЕ ЧИСЛО!!!!!')
 
 
-person = {}
+person = {}                                                               # создание списков и словарей для промежуточного хранения номеров такси и п.
 taxi = {}
 sort = {}
 person_n = []
 summa = int()
 
-flag = 0
+flag = 0                                                                           # ввод расстояния до дома кажд. сотрудника
 for i in range(n):
     while flag < n:
         try:
@@ -26,7 +26,7 @@ for i in range(n):
         except ValueError:
             print('ВВОДИТЕ ЧИСЛО!!!!!')
 
-flag1 = 0
+flag1 = 0                                                                            # ввод  цены у каждого такси
 for i in range(n):
     while flag1 < n:
         try:
@@ -38,7 +38,7 @@ for i in range(n):
             print('ВВОДИТЕ ЧИСЛО!!!!!')
 
 
-taxi1 = sorted(taxi.values(), reverse=True)
+taxi1 = sorted(taxi.values(), reverse=True)                                          # сопоставление 1эл. с большей ценой 1эл. с меньшим расстоянием
 person1 = sorted(person.values())
 
 
